@@ -1,0 +1,21 @@
+<div class="mat-elevation-z8">
+  <table class="custom-table">
+    <!-- Table header -->
+    <tr>
+      <th *ngFor="let col of displayedColumns">{{ col | titlecase }}</th>
+      <th>Actions</th>
+    </tr>
+    <!-- Table data -->
+    <tr *ngFor="let row of dataSource">
+      <td *ngFor="let col of displayedColumns">{{ row[col] }}</td>
+      <td *ngIf="row.status === 'pending'">
+        <button mat-stroked-button color="primary" (click)="acceptChanges(row.mobilenumber)" [disabled]="row.status !== 'pending'">Accept</button>
+        <button mat-stroked-button color="warn" (click)="rejectChanges(row.mobilenumber)" [disabled]="row.status !== 'pending'">Reject</button>
+      </td>
+      <td *ngIf="row.status === 'Accepted' || row.status === 'Rejected'">
+        <button style="width: 50px;" mat-stroked-button color="primary" [disabled]="true">Accept</button>
+        <button style="width: 50px;" mat-stroked-button color="warn" [disabled]="true">Reject</button>
+      </td>
+    </tr>
+  </table>
+</div>

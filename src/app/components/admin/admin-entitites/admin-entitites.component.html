@@ -1,0 +1,88 @@
+<form [formGroup]="hospitalform">
+    <div class="banner container">
+        <div class="links">
+            <div class="back-link">
+                <img src="assets\back.svg" alt="">
+
+                <button mat-button (click)="goBack()" >
+                    <mat-icon>arrow_back</mat-icon>
+                    Back
+                </button>            </div>
+        
+        </div>
+    </div>
+
+    <div class="form-box container">
+        <h1>Admin-Entitites Form:</h1>
+        <div class="form">
+            <div class="form-fields">
+                <mat-card>
+                    <mat-card-content>
+                        <h3>Please fill the form to continue</h3>
+                        <mat-form-field class="mat-50">
+
+                            <mat-label>User Name</mat-label>
+                            <input formControlName="username" matInput>
+                        </mat-form-field>
+
+                        <mat-form-field class="mat-50">
+
+                            <mat-label>Name</mat-label>
+                            <input formControlName="name" matInput>
+                        </mat-form-field>
+
+                        <mat-form-field class="mat-50">
+                            <mat-label>Mobile Number</mat-label>
+                            <input formControlName="mobilenumber" matInput>
+                        </mat-form-field>
+
+                        <mat-form-field class="mat-50">
+                            <mat-label>Pick Up Location</mat-label>
+
+                            <!---- <input matInput> -->
+                            <mat-select formControlName="pickuplocation">
+                                <mat-option [value]="item" *ngFor="let item of Pickuplocation">{{item}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+
+                        <mat-form-field class="mat-50">
+                            <mat-label>Drop Down Location</mat-label>
+
+                            <!---- <input matInput> -->
+                            <mat-select formControlName="dropdownlocation">
+                                <mat-option [value]="items"
+                                    *ngFor="let items of dropdownlocation">{{items}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Choose a Date in Calendar</mat-label>
+                            <input formControlName="chooseadateincalender" matInput [matDatepicker]="picker" (dateChange)="dateChanged($event)">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                        </mat-form-field>
+                        
+
+                    </mat-card-content>
+
+                    <mat-form-field class="mat-50">
+                        <mat-label>Description (Text Box)</mat-label>
+
+                        <textarea matInput formControlName="description"></textarea>
+                    </mat-form-field>
+
+                    <mat-card-footer>
+
+                        <button class="submit" (click)="show()">Submit</button>
+
+                    </mat-card-footer>
+                </mat-card>
+            </div>
+        </div>
+        <footer>
+            <div class="copyright container"><br><br>
+                <p>2024 Copyright ©. All Rights Reserved Design and Development</p>
+            </div>
+        </footer>
+    </div>
+</form>

@@ -1,0 +1,30 @@
+<div>
+    <h3>Welcome to admin panel</h3>
+
+    <p>
+        <mat-toolbar color="primary" style="display:  flex; justify-content: space-around;">
+            <div>
+                <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+                    <mat-icon>menu</mat-icon>
+                </button>
+                <button mat-icon-button><mat-icon>DMy App</mat-icon></button>
+            </div>
+            <span class="example-spacer"></span>
+            <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+                <mat-icon>favorite</mat-icon>
+            </button>
+            <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+                <mat-icon>share</mat-icon>
+            </button>
+            <button mat-button (click)="logout()">
+                <mat-icon>exit_to_app</mat-icon>
+                Logout
+            </button>
+        </mat-toolbar>
+    </p>
+    <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-around;">
+
+
+    </div>
+</div>
+<router-outlet></router-outlet>

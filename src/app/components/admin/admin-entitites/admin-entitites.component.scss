@@ -1,0 +1,171 @@
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+mat-card {
+    margin: 2%;
+    text-align: left;
+}
+
+.mat-mdc-form-field {
+    width: 98%;
+    margin: 1%
+}
+
+.mat-50 {
+    width: 48%;
+    margin: 1%;
+}
+
+button {
+    margin: 2px;
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.back-link {
+    display: flex;
+    margin: 40px 0px;
+    align-items: center;
+}
+
+.submit {
+    background-color: #1a73e9;
+    color: #fff;
+    width: 100%;
+    padding: 20px 50px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 40px;
+
+}
+
+.mat-mdc-card-content:first-child {
+    padding-top: 16px;
+    padding-bottom: 25px;
+}
+
+.browse button {
+    margin: 6px;
+    border-radius: 4px;
+    background-color: #E7F0FD;
+    color: #222;
+    padding: 12px 40px;
+
+}
+
+footer {
+    margin-top: 60px;
+    background-color: #000000;
+}
+
+.copyright {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.copyright p {
+    color: #b2b2b2;
+    text-align: left;
+
+
+
+
+}
+
+h1 {
+    font-size: 48px;
+    color: #1a73e9;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+h3 {
+    font-size: 24px;
+    color: #1a73e9;
+    margin-bottom: 10px;
+}
+
+.container {
+    max-width: 1400px;
+    width: 90vw;
+    margin: 0 auto;
+}
+
+
+.form-box {
+    background-color: #EBF3FE;
+    padding: 60px 120px;
+    border-radius: 20px;
+    margin-top: 28px;
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.back-link {
+    display: flex;
+    margin: 40px 0px;
+    align-items: center;
+}
+
+.back-link a {
+    margin: 0 0 4px 12px;
+    color: #1a73e9;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 800px) {
+    h1 {
+        font-size: 32px;
+        align-items: center;
+    }
+
+    h2 {
+        font-size: 1px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    h4 h5 h6 {
+        font-size: 12px;
+    }
+
+    .form {
+        flex-direction: column;
+    }
+
+    .form-fields {
+        width: 100%;
+    }
+
+    .form-fields h5 {
+        font-size: 14px;
+    }
+
+    .form-fields {
+        margin-bottom: -10px;
+    }
+}
