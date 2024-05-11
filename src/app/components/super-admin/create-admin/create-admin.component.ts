@@ -1,53 +1,40 @@
-import { Component } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+export interface FormData {
+  fullName: string;
+  email: string;
+  number: number | null;
+  password: string;
+}
+
 
 @Component({
   selector: 'app-create-admin',
   templateUrl: './create-admin.component.html',
   styleUrls: ['./create-admin.component.scss']
 })
-export class CreateAdminComponent {
+export class CreateAdminComponent implements OnInit {
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
+  formData: FormData = {
+    fullName: '',
+    email: '',
+    number: null,
+    password: ''
+  };
+  localStorageKey = 'formData';
 
-  productForm: FormGroup;
-  admins: any[] = [];
-
-  constructor(private fb:FormBuilder) {
-    this.productForm = this.fb.group({
-      users: this.fb.array([]) ,
-    });
-    this.loadAdminsFromLocalStorage();
+  saveData() {
+    const dataString = localStorage.getItem(this.localStorageKey);
+    const data: FormData[] = dataString ? JSON.parse(dataString) : [];
+    data.push(this.formData);
+    localStorage.setItem(this.localStorageKey, JSON.stringify(data));
+    this.formData = { fullName: '', email: '', number: null, password: '' };
   }
 
-  users() : FormArray {
-    return this.productForm.get("users") as FormArray
-  }
-
-  newUser(): FormGroup{
-    return this.fb.group({
-      name: '',
-      mobilenumber: '',
-      usertypepassword: '',
-    })
-  }
-
-  addUser() {
-    this.users().push(this.newUser());
-  }
-
-  removeUser(i:number) {
-    this.users().removeAt(i);
-  }
-
-  onSubmit() {
-    console.log(this.productForm.value);
-    this.admins.push(this.productForm.value);
-    const parsedData = JSON.stringify({ users: this.admins });
-    localStorage.setItem('addedAdmins',parsedData);
-  }
-
-  loadAdminsFromLocalStorage() {
-    const DBdata = localStorage.getItem('addedAdmins');
-    const realData = DBdata ? JSON.parse(DBdata) : { users: [] };
-    this.admins = realData.users;
+  getData(): FormData[] {
+    const dataString = localStorage.getItem(this.localStorageKey);
+    return dataString ? JSON.parse(dataString) : [];
   }
 }
+  
