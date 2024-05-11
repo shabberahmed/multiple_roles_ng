@@ -1,0 +1,28 @@
+<h2 mat-dialog-title>Add Hospitals</h2>
+<mat-dialog-content class="mat-typography">
+  <form #doctorForm="ngForm" style="display: flex; flex-direction: column; justify-content: space-between;">
+  <div >
+    <mat-form-field style="margin: 10px;">
+      <input matInput placeholder="Name" name="name" ngModel required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="phoneNumber" name="phoneNumber" ngModel required>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field style="margin: 10px;">
+      <input matInput placeholder="location	" name="location" ngModel required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Capacity" name="capacity" ngModel required>
+    </mat-form-field>
+  </div>
+    <mat-form-field>
+      <input matInput placeholder="Available" name="availableBeds" ngModel required >
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="doctorForm.value" [disabled]="!doctorForm.valid" cdkFocusInitial>Add</button>
+</mat-dialog-actions>

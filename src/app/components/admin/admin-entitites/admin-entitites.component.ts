@@ -18,8 +18,8 @@ export class AdminEntititesComponent implements OnInit {
   constructor(private builder:FormBuilder, private sharedService:SharedService, private location:Location,private router:Router) {}
 
   hospitalform = this.builder.group({
-    username: ['', Validators.required], 
-    name: ['', Validators.required], 
+    username: ['', Validators.required],
+    name: ['', Validators.required],
     mobilenumber: ['', Validators.required],
     pickuplocation: ['', Validators.required],
     dropdownlocation: ['', Validators.required],
@@ -51,7 +51,5 @@ export class AdminEntititesComponent implements OnInit {
     this.sharedService.logout();
   }
 
-  goBack(): void {
-    this.location.back();
-  }
+
 }

@@ -1,1 +1,31 @@
-<p>docters-data works!</p>
+<div class="mat-elevation-z8">
+  <button mat-button (click)="openDialog()">Add doctors</button>
+
+  <table class="custom-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Specialty</th>
+        <th>Hospital ID</th>
+        <th>Phone Number</th>
+        <th>Email</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let doctor of dataSource">
+        <td>{{ doctor.name }}</td>
+        <td>{{ doctor.specialty }}</td>
+        <td>{{ doctor.hospitalId }}</td>
+        <td>{{ doctor.phoneNumber }}</td>
+        <td>{{ doctor.email }}</td>
+        <td>
+          <button mat-icon-button color="warn" (click)="deleteDoctor(doctor.email)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

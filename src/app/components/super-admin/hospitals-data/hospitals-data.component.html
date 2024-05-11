@@ -1,1 +1,30 @@
-<p>hospitals-data works!</p>
+<div class="mat-elevation-z8">
+  <button mat-button (click)="openAddHospitalDialog()">Add Hospitals</button>
+
+  <table class="custom-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Location</th>
+        <th>Phone Number</th>
+        <th>Capacity</th>
+        <th>Available Beds</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let hospital of dataSource">
+        <td>{{ hospital.name }}</td>
+        <td>{{ hospital.location }}</td>
+        <td>{{ hospital.phoneNumber }}</td>
+        <td>{{ hospital.capacity }}</td>
+        <td>{{ hospital.availableBeds }}</td>
+        <td>
+          <button mat-icon-button color="warn" (click)="deleteHospital(hospital.name)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

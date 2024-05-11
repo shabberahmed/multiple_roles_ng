@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AdminServiceService } from '../admin-service.service';
 
 @Component({
   selector: 'app-users-data',
@@ -7,14 +6,19 @@ import { AdminServiceService } from '../admin-service.service';
   styleUrls: ['./users-data.component.scss']
 })
 export class UsersDataComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'username', 'fullName', 'email', 'role'];
+  displayedColumns: string[] = ['wardNumber', 'firstName', 'lastName', 'diagnosis', 'dateOfBirth', 'bloodType', 'status', 'admissionDate', 'hospitalName'];
   dataSource!: any[];
 
-  constructor(private adminService: AdminServiceService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.adminService.serviceData().subscribe(data => {
-      this.dataSource = data.users; // Assuming the users are in the 'users' array
-    });
+    // Retrieve user (patient) data from local storage
+    const sadminData = localStorage.getItem('sadminData');
+    if (sadminData) {
+      const parsedData = JSON.parse(sadminData);
+      this.dataSource = parsedData.patient;
+    } else {
+      console.log('No data');
+    }
   }
 }

@@ -1,1 +1,19 @@
-<p>super-admin-dashboard works!</p>
+
+<div class="container" ng-controller="myCtrl">
+  <div class="box" (click)="goToUsers()">
+      Users
+      <div class="overlay">Display Users</div>
+  </div>
+  <div class="box" (click)="goToAdmins()">
+      Admins
+      <div class="overlay">Display Admins</div>
+  </div>
+  <div class="box" (click)="goToHospitals()">
+      Hospitals
+      <div class="overlay">Display Hospitals</div>
+  </div>
+  <div class="box" (click)="goToDoctors()">
+      Doctors
+      <div class="overlay">Display Doctors</div>
+  </div>
+</div>

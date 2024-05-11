@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { SharedService } from 'src/app/shared.service';
@@ -8,7 +9,7 @@ import { SharedService } from 'src/app/shared.service';
   styleUrls: ['./dashbord.component.scss']
 })
 export class DashbordComponent {
-constructor (private router:Router,private sharedService:SharedService){}
+constructor (private router:Router,private sharedService:SharedService,private location:Location){}
 goToEntites(){
 this.router.navigate(['admin/admin-entites'])
 }
@@ -19,5 +20,5 @@ logout() {
 checkData(){
   this.router.navigate(['admin/data'])
 }
+
     }
-    

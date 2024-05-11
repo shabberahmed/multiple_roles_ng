@@ -17,10 +17,9 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatButtonModule} from '@angular/material/button';
-import {MatDialogModule} from '@angular/material/dialog';
+import {MatDialogModule,MatDialog} from '@angular/material/dialog';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatTableModule } from '@angular/material/table';
-
 import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { Dialog } from '@angular/cdk/dialog';
@@ -30,9 +29,10 @@ import { AdminEntititesComponent } from './components/admin/admin-entitites/admi
 import { AdminEntitiesDataComponent } from './components/admin/admin-entities-data/admin-entities-data.component';
 import { SuperAdminDashboardComponent } from './components/super-admin/super-admin-dashboard/super-admin-dashboard.component';
 import { UsersDataComponent } from './components/super-admin/users-data/users-data.component';
-import { HospitalsDataComponent } from './components/super-admin/hospitals-data/hospitals-data.component';
-import { DoctersDataComponent } from './components/super-admin/docters-data/docters-data.component';
+import { DialogAddDocter, HospitalsDataComponent } from './components/super-admin/hospitals-data/hospitals-data.component';
+import {  DialogContentExampleDialog, DoctersDataComponent } from './components/super-admin/docters-data/docters-data.component';
 import { CreateAdminComponent } from './components/super-admin/create-admin/create-admin.component';
+import { SuperAdminModule } from './super-admin/super-admin.module';
 
 @NgModule({
   declarations: [
@@ -49,7 +49,9 @@ import { CreateAdminComponent } from './components/super-admin/create-admin/crea
     UsersDataComponent,
     HospitalsDataComponent,
     DoctersDataComponent,
-    CreateAdminComponent
+    CreateAdminComponent,
+    DialogContentExampleDialog,
+    DialogAddDocter
     ],
   imports: [
     MatIconModule,
@@ -71,6 +73,7 @@ import { CreateAdminComponent } from './components/super-admin/create-admin/crea
     MatDialogModule,
     BrowserAnimationsModule,
     MatTableModule,
+    SuperAdminModule
 
   ],
   providers: [
